@@ -14,9 +14,12 @@
     "@tanstack/react-query": "^5.104.5",
     "axios": "^1.20.0",
     "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "framer-motion": "^14.5.0",
     "lucide-react": "^1.60.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-hot-toast": "^2.6.1",
     "react-router-dom": "^7.18.4",
     "recharts": "^3.10.1",
     "tailwindcss": "^4.3.3"

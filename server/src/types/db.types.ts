@@ -82,6 +82,8 @@ export interface CategoryRow {
   created_at: Date;
 }
 
+export type DepreciationModel = 'STRAIGHT_LINE' | 'DOUBLE_DECLINING';
+
 export interface AssetRow {
   id: string;
   asset_tag: string;
@@ -93,6 +95,9 @@ export interface AssetRow {
   manufacturer: string | null;
   purchase_date: Date | null;
   purchase_cost: string | null; // pg returns NUMERIC as string
+  salvage_value: string | null;
+  useful_life_years: number | null;
+  depreciation_mdl: DepreciationModel | null;
   warranty_expiry: Date | null;
   status: AssetStatus;
   location: string | null;
@@ -100,6 +105,35 @@ export interface AssetRow {
   created_by: string | null;
   created_at: Date;
   updated_at: Date;
+}
+
+export interface AssetFinancialRow {
+  id: string;
+  asset_tag: string;
+  name: string;
+  category_id: string | null;
+  purchase_cost: string | null;
+  purchase_date: Date | null;
+  salvage_value: string | null;
+  useful_life_years: number | null;
+  depreciation_mdl: DepreciationModel | null;
+  status: AssetStatus;
+  age_years: string | null;
+  annual_depreciation: string | null;
+  current_book_value: string | null;
+}
+
+export type DiskStatus = 'healthy' | 'warning' | 'critical';
+
+export interface TelemetryRow {
+  id: string;
+  asset_id: string;
+  health_score: number;
+  battery_level: number | null;
+  disk_status: DiskStatus;
+  cpu_temp_c: number;
+  last_ping: Date;
+  created_at: Date;
 }
 
 export interface AssignmentRow {
@@ -155,5 +189,9 @@ export interface DashboardStats {
   assets_by_status: { status: AssetStatus; count: number }[];
   recent_assignments: number; // last 30 days
   recent_audit_events: number; // last 7 days
+  // Financial overview
+  total_purchase_cost: number;
+  total_current_book_value: number;
+  total_depreciation: number;
 }
 

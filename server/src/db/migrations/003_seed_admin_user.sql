@@ -15,8 +15,8 @@ INSERT INTO users (
   'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
   'System Administrator',
   'admin@techvault.local',
-  -- bcrypt hash of 'Admin@1234'  (cost factor 12)
-  '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj4oMuHk1PoS',
+  -- bcrypt hash of 'Admin@1234' (cost factor 12)
+  '$2a$12$kFGSweFqCReKztLZz8.scu/tV5/kCEHp19d/mzopBH/vxVdkQ628O',
   '00000000-0000-0000-0000-000000000001',
   TRUE
 )

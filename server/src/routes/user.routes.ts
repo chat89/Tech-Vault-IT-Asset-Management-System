@@ -21,7 +21,7 @@ userRouter.use(authenticate);
 userRouter.get('/roles', authorize('super_admin', 'it_admin'), getRoles);
 
 // GET /api/users        — list all users (admin+ only)
-userRouter.get('/', authorize('super_admin', 'it_admin'), requirePermission('manage_users'), getAllUsers);
+userRouter.get('/', authorize('super_admin', 'it_admin'), getAllUsers);
 
 // GET /api/users/:id    — get single user
 userRouter.get('/:id', authorize('super_admin', 'it_admin'), getUserById);
